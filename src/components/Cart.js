@@ -7,11 +7,6 @@ import axios from "axios";
 function Cart() {
 
 
-    
-
-
-
-
  // const { CartItem } = useContext(Cartdata);
 
   //console.log(CartItem)
@@ -29,7 +24,7 @@ function Cart() {
    try {
         const res=await axios.post("http://localhost:4000/order/",{
         name,
-        image,
+         image,
          quantity,
          Price,
          varient
@@ -113,7 +108,7 @@ return (
 
               <div className="m-1">
 
-                <button className="btn btn-secondary" style={{ float: "right" }} onClick={()=>handleorder(d.name,d.image,d.quantity,d.varient,d.Price)} >order</button>
+                <button className="btn btn-secondary" style={{ float: "right" }} onClick={()=>handleorder(d.name,`${d.image}`,d.quantity,d.varient,d.Price)} >order</button>
               </div>
 
             </div>

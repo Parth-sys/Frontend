@@ -26,7 +26,7 @@ const Logout = () => {
   if (isLogIN) {
     localStorage.clear("userinfo");
     
-    navigate('/Login')
+    navigate('/login')
   }
   else {
     alert("Please LogIn")
@@ -77,9 +77,17 @@ setisLogIN(false)
                 Grocery
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
+
+            {isLogIN?
+            <Nav.Link href="/orders" >
+              orders
             </Nav.Link>
+            :
+
+            <Nav.Link href="/orders" disabled>
+            orders
+          </Nav.Link>
+        }
           </Nav>
            <Form>
           <a href='/cart'><Button variant="outline-success">Cart</Button></a>
