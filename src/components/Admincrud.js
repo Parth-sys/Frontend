@@ -7,7 +7,7 @@ import Select from 'react-select';
 function AdminCrud(){
 
 const[data,setdata]=useState([])
-const[cdata,setcdata]=useState([])
+
 
 useEffect(()=>{
 Mob()
@@ -108,16 +108,7 @@ const op2=[
 
 
 
-    const cloth=async()=>{
-        try {
-            const res=await axios.get("http://localhost:4000/data/cloth")
-         
-            setcdata(res.data)
-        } catch (error) {
-            console.log(error)
-        }
-
-    }
+    
 
 
 
