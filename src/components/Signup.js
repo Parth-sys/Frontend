@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { Form, Button } from 'react-bootstrap'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 
 
 const Signup = () => {
 
-
+const navigate=useNavigate();
 
 
   const [formdata, setformdata] = useState({
@@ -32,6 +32,7 @@ const Signup = () => {
       }
       else if (res.data === false) {
         alert("User alredy exists")
+        navigate('/login')
       }
     } catch (error) {
       alert("Error  during registration")

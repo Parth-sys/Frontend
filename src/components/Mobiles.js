@@ -25,8 +25,7 @@ useEffect(()=>{
        var list=useMemo(filterlist,[Category,mobile]);
   
   
-  console.log(Category)
-console.log(list)
+  
 
     const data=async()=>{
         try {

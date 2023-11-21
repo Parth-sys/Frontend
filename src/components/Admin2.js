@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import axios from 'axios'
 import { Container, Form, Button } from 'react-bootstrap'
 import Select from 'react-select'
-function Admin() {
+function Admin2() {
 
     const[name,setname]=useState(" ")
     const[varients,setvarients]=useState([])
@@ -14,6 +14,7 @@ function Admin() {
     
     
     
+    
      useEffect(() => {
 
     }, [])
@@ -22,19 +23,11 @@ function Admin() {
 
 
 
-    
-
-    const handleChange = (varients) => {
-        setvarients(varients || [])
-      };
-
-
-
-      const handelsubmit = async (e) => {
+    const handelsubmit = async (e) => {
 
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:4000/admin/mobile/`, {
+            const res = await axios.post("http://localhost:4000/admin/cloth", {
                 name,
                 varients,
                 Prices,
@@ -51,10 +44,9 @@ function Admin() {
         }
     }
 
-
-
-    
-
+    const handleChange = (varients) => {
+        setvarients(varients || [])
+      };
 
 
       const handle = (Prices) => {
@@ -62,14 +54,16 @@ function Admin() {
       };
     
     const options = [
-   {  lable: " 512GB", value:"512GB"},
+   {  lable: "small", value:"small"},
 
-     {lable:"256GB" , value:"256GB"}
+     {lable:"xl" , value:"xl"},
+     {lable:"xxl" , value:"xxl"}
     ]
 
     const op2=[
-        {lable:"512GB" ,value :"25000"},
-        {lable :"256GB", value:"20000"}
+        {lable:"small" ,value :"250"},
+        {lable :"xl", value:"350"},
+        {lable:"xxl",value:"550"}
     ]
 
 
@@ -85,7 +79,7 @@ function Admin() {
 
 
                 <div className='row'>
-                    <h4>Add mobile </h4>
+                    <h4>Add cloth </h4>
                     <Form onSubmit={handelsubmit} className='form'>
 
                         <Form.Group>
@@ -155,4 +149,4 @@ function Admin() {
         </Container>
     )
 }
-export default Admin;
+export default Admin2;

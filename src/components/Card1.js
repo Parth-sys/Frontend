@@ -24,9 +24,7 @@ function Card1({ cloth }) {
             Price: Price
         }
 
-        const it = cartItems.push(item);
-
-console.log(it)
+     setcartItems(item)
         /*  
           var a=
             [  {name:name,image:image,varient:varient,quantity:quantity,Price:Price}
@@ -46,6 +44,7 @@ console.log(it)
             progress: undefined,
             theme: "dark"
         });
+        localStorage.setItem("cartItems", JSON.stringify(cartItems))
     }
 
 

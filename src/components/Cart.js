@@ -7,9 +7,8 @@ import axios from "axios";
 function Cart() {
 
 
- // const { CartItem } = useContext(Cartdata);
-
-  //console.log(CartItem)
+ 
+  
 
 
   var  cartItems=localStorage.getItem('cartItems')
@@ -29,7 +28,7 @@ function Cart() {
          Price,
          varient
         })
-        if(res.status==200){
+        if(res.status===200){
           alert("order placed")
         }
         else{
