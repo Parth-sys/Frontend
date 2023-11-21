@@ -2,9 +2,9 @@ import React ,{createContext, useState}from "react";
 import { useContext } from "react";
 //import { useNavigate} from "react-router-dom";
 import {toast} from 'react-toastify'
-import Toast from "./Components/Toast";
-//import { Mensdata } from "./Components/Mendata";
 
+//import { Mensdata } from "./Components/Mendata";
+import {Toast } from './components/Toast'
 
 
 const Cartdata=createContext();
@@ -26,7 +26,7 @@ function Datacard({data}){
     
     
     
-    const addtocart=( name, image,varient,quantity,Price)=>{
+    const addtocart=( name,image,varient,quantity,Price)=>{
  
         const item={
             name:name,
@@ -37,7 +37,8 @@ function Datacard({data}){
         }
 
      const it=cartItems.push(item);
-     
+     console.log(cartItems)
+     setcartItems(it)
 
       /*  
         var a=
@@ -61,7 +62,8 @@ theme: "dark"
 
         
 localStorage.setItem('cartItems', JSON.stringify(cartItems))
-    }
+
+}
 
     
     

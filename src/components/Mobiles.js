@@ -1,6 +1,8 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useState,useMemo} from "react";
 import { Container } from "react-bootstrap";
 import axios from "axios";
+import Card from './Card'
+
 
 function Mobile(){
     const [Category, setCategory] = useState()
@@ -10,27 +12,27 @@ useEffect(()=>{
     data();
 },[])
 
-/*
+
     function filterlist(){
         if(!Category || Category==='select'){
-              return bike;
+              return mobile;
         }
-        return bike.filter(C=>C.Category === Category);
+        return mobile.filter(C=>C.Brand=== Category);
        }
    
   
   
-       var filist=useMemo(filterlist,[Category,bike]);
+       var list=useMemo(filterlist,[Category,mobile]);
   
-  console.log(data)
+  
   console.log(Category)
-*/
+console.log(list)
 
     const data=async()=>{
         try {
             const res=await axios.get("http://localhost:4000/data/mobile")
-            console.log(res);
-            setmobile(res)
+         
+            setmobile(res.data)
         } catch (error) {
             console.log(error)
         }
@@ -49,13 +51,26 @@ useEffect(()=>{
                         <select name="select" className='form-select ' onChange={(e) => setCategory(e.target.value)} >
                               <option defaultValue="select">select</option>
                               <option value="MOTOROLA">MOTOROLA</option>
-                              <option value="Samsung">Samsung</option>
+                              <option value="samsung">Samsung</option>
                              
                         </select>
                   </div>
-            </div>  
-           
-      
+                           </div>  
+         </div>
+           <div className="row justify-content-center">
+
+               {
+                   list.map((p,index)=>{
+                       return <div className="col-md-4 " key={index}>
+                <div>
+
+                    <Card data={p}></Card>
+                </div>
+                </div>
+              })
+              
+            }
+            </div>
       
 
 
@@ -63,7 +78,6 @@ useEffect(()=>{
 
 
 
-         </div>
         </Container>
     )
 }

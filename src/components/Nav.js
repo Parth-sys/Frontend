@@ -4,8 +4,48 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import React,{useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar1() {
+
+  const[isLogIN,setisLogIN]=useState(false);
+
+  const navigate=useNavigate();
+
+useEffect(()=>{
+Check()
+},[])
+
+
+
+const Logout = () => {
+        
+        
+        
+  if (isLogIN) {
+    localStorage.clear("userinfo");
+    
+    navigate('/Login')
+  }
+  else {
+    alert("Please LogIn")
+  }
+}
+
+
+  const Check=()=>{
+    var token=localStorage.getItem("userinfo")
+    
+if(token){
+ setisLogIN(true)
+}
+else {
+
+setisLogIN(false)
+}
+}
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -18,29 +58,31 @@ function Navbar1() {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/signup">Signup</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
+            {isLogIN?
+            <button classname="btn btn-primary" onClick={Logout}>Logout</button>
+          :
+          <Nav.Link href="/login">login</Nav.Link>
+          ?
+          <Nav.Link href="/signup">Signup</Nav.Link>
+          :
+          <></>
+          }
+            <NavDropdown title="Products" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/mobiles">Mobile</NavDropdown.Item>
+              <NavDropdown.Item href="/cloth">
+                Clothes
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
-                Something else here
+                Grocery
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#" disabled>
               Link
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
+           <Form>
+          <a href='/cart'><Button variant="outline-success">Cart</Button></a>
           </Form>
         </Navbar.Collapse>
       </Container>

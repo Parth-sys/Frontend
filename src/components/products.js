@@ -1,5 +1,4 @@
 import { Container } from 'react-bootstrap';
-import data from '../Data';
 import React from 'react';
 
 
@@ -32,7 +31,7 @@ function Products() {
 
                     <h4>Fashion</h4>
                     <div>
-                      <a href="/">  <img src="https://freepngimg.com/thumb/dress%20shirt/4-black-dress-shirt-png-image.png" alt="fashion" height="90px"></img></a>
+                      <a href="/cloth">  <img src="https://freepngimg.com/thumb/dress%20shirt/4-black-dress-shirt-png-image.png" alt="fashion" height="90px"></img></a>
                     </div>
                 </div>
 

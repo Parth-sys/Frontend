@@ -226,8 +226,8 @@ var mdata=
   {
     "name":"MOTO g62 5G",
      "varients":[
-          "512GB",
-            "256GB",  
+          "512",
+            "256",  
      
         ],
        "Prices":[{

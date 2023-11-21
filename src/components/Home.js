@@ -3,6 +3,7 @@ import {Container} from 'react-bootstrap';
 import Navbar1 from "./Nav";
 import Carousel1 from "./Carousels";
 import Products from "./products";
+import Footer from './Footer'
 function Home(){
     return(
 
@@ -12,6 +13,10 @@ function Home(){
        <Carousel1></Carousel1>
 
         <Products></Products>
+        <div>
+        <Footer></Footer>      
+      </div> 
+
        </Container>
         )
 

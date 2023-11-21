@@ -65,7 +65,7 @@ function Footer(){
             Products
           </h6>
           <p>
-            <a href="#!" className="text-reset bordernone">Mens Clothes</a>
+            <a href="/cloth" className="text-reset bordernone">Mens Clothes</a>
           </p>
           <p>
             <a href="#!" className="text-reset bordernone" >Woman Clothes</a>
