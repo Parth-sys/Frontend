@@ -11,7 +11,7 @@ const[data,setdata]=useState([])
 
 useEffect(()=>{
 Mob()
-cloth()
+
 },[])
 
 const [show,setshow]=useState(false)
