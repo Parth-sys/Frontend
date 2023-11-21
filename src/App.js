@@ -8,8 +8,8 @@ import Signup from './components/Signup';
 import Mobile from './components/Mobiles';
 import Cloth from './components/Cloth';
 import Admin from './components/Admin';
-import Cart from './components/Cart';
-
+import Cart from './components/Cart'
+import Order from './order';
 
 function App() {
   return (
@@ -22,6 +22,8 @@ function App() {
    <Route path='/cloth' element={<Cloth></Cloth>}></Route>
    <Route  path='/admin' element={<Admin/>}></Route>
    <Route path='/cart' element={<Cart></Cart>}></Route>
+   <Route path='/orders' element={<Order></Order>}></Route>
+   <Route path="*" element={<p> 404 Error</p>}></Route>
     </Routes>
   );
 }
