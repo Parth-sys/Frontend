@@ -20,7 +20,7 @@ const [orders,setorders]=useState([]);
  const handelsubmit=async()=>{
     
     try {
-      const res= await axios.get("http://localhost:4000/Order/");
+      const res= await axios.get("https://backend-h5ea.onrender.com/Order/");
       console.log(res)   
       setorders(res.data)
 }
