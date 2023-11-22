@@ -34,7 +34,7 @@ function Admin() {
 
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:4000/admin/mobile/`, {
+            const res = await axios.post(`https://backend-h5ea.onrender.com/admin/mobile/`, {
                 name,
                 varients,
                 Prices,

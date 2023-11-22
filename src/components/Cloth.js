@@ -16,7 +16,7 @@ function Cloth() {
 
     const data = async () => {
         try {
-            const res = await axios.get("http://localhost:4000/data/cloth")
+            const res = await axios.get("https://backend-h5ea.onrender.com/data/cloth")
             setcloth(res.data)
         } catch (error) {
             console.log(error)

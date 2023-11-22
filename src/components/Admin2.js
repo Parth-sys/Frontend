@@ -27,7 +27,7 @@ function Admin2() {
 
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:4000/admin/cloth", {
+            const res = await axios.post("https://backend-h5ea.onrender.com/admin/cloth", {
                 name,
                 varients,
                 Prices,

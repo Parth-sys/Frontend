@@ -23,7 +23,7 @@ const navigate=useNavigate();
 
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4000/signup/verify",{ formdata});
+      const res = await axios.post("https://backend-h5ea.onrender.com/signup/verify",{ formdata});
 
       console.log(res.data)
 

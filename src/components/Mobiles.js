@@ -29,7 +29,7 @@ useEffect(()=>{
 
     const data=async()=>{
         try {
-            const res=await axios.get("http://localhost:4000/data/mobile")
+            const res=await axios.get("https://backend-h5ea.onrender.com/data/mobile")
          
             setmobile(res.data)
         } catch (error) {

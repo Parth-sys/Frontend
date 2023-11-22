@@ -61,7 +61,7 @@ const op2=[
 
     const Mob=async()=>{
         try {
-            const res=await axios.get("http://localhost:4000/data/mobile")
+            const res=await axios.get("https://backend-h5ea.onrender.com/data/mobile")
          
             setdata(res.data)
         } catch (error) {
@@ -74,7 +74,7 @@ const op2=[
 
     const dele=async()=>{
         try {
-            const res=await axios.get(`http://localhost:4000/admin/mobile/${name}`)
+            const res=await axios.get(`https://backend-h5ea.onrender.com/admin/mobile/${name}`)
          
             setdata(res.data)
         } catch (error) {
@@ -89,7 +89,7 @@ const op2=[
 
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:4000/admin/mobile/${name}`, {
+            const res = await axios.post(`https://backend-h5ea.onrender.com/admin/mobile/${name}`, {
                 name1,
                 varients1,
                 Prices1,
