@@ -21,7 +21,7 @@ function Cart() {
 
   const  handleorder=async(name,image,quantity,Price,varient)=>{
    try {
-        const res=await axios.post("http://localhost:4000/order/",{
+        const res=await axios.post("https://backend-h5ea.onrender.com/order/",{
         name,
          image,
          quantity,
